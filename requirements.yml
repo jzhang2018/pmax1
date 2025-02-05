@@ -1,0 +1,5 @@
+collections:
+  # Install Dell EMC Ansible modules for PowerMax
+  - name: "https://github.com/dell/ansible-powermax.git"   
+    type: git
+    version: "3.1.0"  # tag
