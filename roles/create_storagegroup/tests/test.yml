@@ -3,4 +3,4 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - create-hostgroup
+    - create_storagegroup

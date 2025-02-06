@@ -1,0 +1,20 @@
+---
+# tasks file for create_storagegroup
+# demo only - no additional logic in this role
+
+- name: Create Storage Group
+  collections:
+    - dellemc.powermax
+  dellemc.powermax.storagegroup:
+    unispherehost: "{{ unispherehost }}"
+    universion: "{{ universion }}"
+    verifycert: "{{ verifycert }}"
+    user: "{{ user }}"
+    password: "{{ password }}"
+    serial_no: "{{ serial_no }}"
+    sg_name: "{{ sg_name }}"
+    state: "present"
+  register: new_sg
+
+- name: Print out new created stirage Group
+  debug: var=new_sg

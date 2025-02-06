@@ -1,0 +1,27 @@
+---
+
+- name: Create Storage Group Play
+  # hosts: localhost
+  hosts: create_storagegroup
+  connection: local
+  gather_facts: false
+  roles:
+    - create_storagegroup
+  
+  # collections: 
+  #   - dellemc.powermax
+
+  # tasks:
+  #   - name: Create Storage Group
+  #     dellemc.powermax.storagegroup:
+  #       unispherehost: "10.60.8.152"
+  #       universion: "101"
+  #       verifycert: False
+  #       user: "smc"
+  #       password: "smc"
+  #       serial_no: "000220002205"
+  #       sg_name: "pmax1_jw_sg"
+  #       state: "present"
+  #     register: result
+      
+  #   - debug: var=result
