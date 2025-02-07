@@ -6,4 +6,5 @@
   connection: local
   gather_facts: false
   roles:
+    - prerequisites
     - create_storagegroup

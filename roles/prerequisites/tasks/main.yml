@@ -1,0 +1,8 @@
+---
+# tasks file for prerequisites
+- name: Install PyU4V
+  ansible.builtin.pip:
+    # name: PyU4V=="{{ PyU4V_version }}"
+    name: PyU4V==10.1.0.0
+    executable: pip3
+ # become: true
