@@ -1,3 +1,2 @@
 ---
-
-PyU4V_version: '10.1.0.0'
+PyU4V_version: "PyU4V==10.1.0.0"

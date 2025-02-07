@@ -1,10 +1,18 @@
 ---
 
-- name: Create Storage Group Play
-  # hosts: localhost
-  hosts: create_storagegroup
+- name: Install prerequisites
+  hosts: prerequisites
   connection: local
   gather_facts: false
   roles:
     - prerequisites
+
+- name: Create Storage Group
+  hosts: create_storagegroup
+  connection: local
+  gather_facts: false
+  # pre_tasks:
+  #   - name: Install prerequisites
+  #     ansible.builtin.include_tasks: prerequisites.yml
+  roles:
     - create_storagegroup
