@@ -2,6 +2,12 @@
 # tasks file for create_storagegroup
 # demo only - no additional logic in this role
 
+- name: Install prerequisites PyU4V
+  ansible.builtin.pip:
+    # name: "{{ PyU4V_version }}"
+    name: PyU4V==10.1.0.0
+    extra_args: --user
+
 - name: Create Storage Group
   collections:
     - dellemc.powermax
@@ -16,5 +22,6 @@
     state: "present"
   register: new_sg
 
-- name: Print out new created stirage Group
-  debug: var=new_sg
+- name: Print out new created storage group
+  ansible.builtin.debug:
+    msg: "{{ new_sg }}"

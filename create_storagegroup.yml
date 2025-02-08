@@ -1,11 +1,11 @@
 ---
 
-- name: Install prerequisites
-  hosts: prerequisites
-  connection: local
-  gather_facts: false
-  roles:
-    - prerequisites
+# - name: Install prerequisites
+#   hosts: prerequisites
+#   connection: local
+#   gather_facts: false
+#   roles:
+#     - prerequisites
 
 - name: Create Storage Group
   hosts: create_storagegroup
