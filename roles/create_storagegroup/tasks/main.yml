@@ -2,11 +2,11 @@
 # tasks file for create_storagegroup
 # demo only - no additional logic in this role
 
-- name: Install prerequisites PyU4V
-  ansible.builtin.pip:
-    # name: "{{ PyU4V_version }}"
-    name: PyU4V==10.1.0.0
-    extra_args: --user
+# - name: Install prerequisites PyU4V
+#   ansible.builtin.pip:
+#     # name: "{{ PyU4V_version }}"
+#     name: PyU4V==10.1.0.0
+#     extra_args: --user
 
 - name: Create Storage Group
   collections:
