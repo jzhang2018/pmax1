@@ -32,6 +32,6 @@ galaxy_info:
 
 dependencies:
   - role: prerequisites
-    vars:
-      PyU4V_version: "PyU4V==10.1.0.0"
+    # vars:
+    #   PyU4V_version: "PyU4V==10.1.0.0"
   # TODO: add tag
