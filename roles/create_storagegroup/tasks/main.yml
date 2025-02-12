@@ -8,6 +8,17 @@
 #     name: PyU4V==10.1.0.0
 #     extra_args: --user
 
+
+- name: Check whether a package called PyU4U is installed
+  ansible.builtin.command: 'pip3 show PyU4V'
+  ignore_errors: true
+  register: result
+  changed_when: result.rc != 0 # <- Uses the return code to define when the task has changed.
+
+- name: Print out package installation status
+  ansible.builtin.debug:
+    msg: "{{ result }}"
+
 - name: Create Storage Group
   collections:
     - dellemc.powermax
