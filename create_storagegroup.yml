@@ -11,8 +11,9 @@
   hosts: create_storagegroup
   connection: local
   gather_facts: false
-  # pre_tasks:
-  #   - name: Install prerequisites
-  #     ansible.builtin.include_tasks: prerequisites.yml
+  pre_tasks:
+    - name: Install prerequisites
+      ansible.builtin.include_tasks: prerequisites.yml
+
   roles:
     - create_storagegroup
