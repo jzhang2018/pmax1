@@ -6,9 +6,9 @@
 
   pre_tasks:
     - name: Check whether a package called PyU4U is installed
-      # ansible.builtin.command: 'pip3 show PyU4V'
+      ansible.builtin.command: 'pip3 show PyU4V'
       # ansible.builtin.command: 'pip3 list --user | grep PyU4V'
-      ansible.builtin.shell: 'pip3 list --user | grep PyU4V'
+      # ansible.builtin.shell: 'pip3 list --user | grep PyU4V'
       ignore_errors: true
       changed_when: result.rc != 0 # <- Uses the return code to define when the task has changed.
       register: result
