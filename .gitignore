@@ -3,4 +3,4 @@
 .vscode/
 .ansible/
 artifacts/
-collections_0/
+collections/
