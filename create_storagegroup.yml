@@ -3,8 +3,8 @@
   hosts: create_storagegroup
   connection: local
   gather_facts: false
-  become: true
-  become_method: sudo
+  # become: true
+  # become_method: sudo
 
   pre_tasks:
     - name: Check whether a package called PyU4U is installed

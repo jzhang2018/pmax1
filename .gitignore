@@ -4,3 +4,4 @@
 .ansible/
 artifacts/
 collections/
+requirements_0.yml
