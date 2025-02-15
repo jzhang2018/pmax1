@@ -7,22 +7,12 @@
   # become_method: sudo
 
   pre_tasks:
-    - name: Display contens
-      ansible.builtin.find:
-        paths: "/usr/lib/python3.9/site-packages/ansible"
-        recurse: yes
-      ignore_errors: true
-      register: ansible_python_module
-    
-    - name: Print out ansible python module location
-      ansible.builtin.debug:
-        msg: "{{ ansible_python_module }}"
+    - name: Set envirinment variable PYTHONPATH
+      environment:
+        PYTHONPATH: "/usr/lib/python3.9/site-packages/ansible"
 
-    - name: Read ansible.cfg
-      ansible.builtin.debug: var=item
-      with_file:
-        - "/etc/ansible/ansible.cfg"
-      ignore_errors: true
+    - name: Echo $PYTHONPATH
+      shell: "echo $PYTHONPATH"
 
     - name: Check whether a package called PyU4U is installed
       ansible.builtin.command: 'pip3 show PyU4V'
