@@ -10,10 +10,8 @@
     - name: Set envirinment variable PYTHONPATH
       environment:
         PYTHONPATH: "/usr/lib/python3.9/site-packages/ansible"
-
-    - name: Echo $PYTHONPATH
       shell: "echo $PYTHONPATH"
-
+  
     - name: Check whether a package called PyU4U is installed
       ansible.builtin.command: 'pip3 show PyU4V'
       # ansible.builtin.command: 'pip3 list --user | grep PyU4V'
