@@ -1,10 +1,11 @@
 ---
 - name: Create Storage Group
-  hosts: create_storagegroup
+  # hosts: create_storagegroup
+  hosts: all
   connection: local
   gather_facts: false
-  become: true
-  become_method: sudo
+  # become: true
+  # become_method: sudo
 
   pre_tasks:  
     - name: Check whether a package called PyU4U is installed
