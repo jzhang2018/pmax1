@@ -1,12 +1,10 @@
 ---
 - name: Create Storage Group
   hosts: create_storagegroup
-  # hosts: all
   connection: local
   gather_facts: false
-  # become: true
-  # become_method: sudo
 
+  # TODO: make pre-task to a separat role for EE
   pre_tasks:  
     - name: Check whether a package called PyU4U is installed
       ansible.builtin.command: 'pip3 show PyU4V'
@@ -25,25 +23,6 @@
     - name: Display site paths
       debug:
         msg: "{{ site_output.stdout_lines }}"
-
-  # tasks:
-    # - name: Create Storage Group
-    #   collections:
-    #     - dellemc.powermax
-    #   dellemc.powermax.storagegroup:
-    #     unispherehost: "{{ unispherehost }}"
-    #     universion: "{{ universion }}"
-    #     verifycert: "{{ verifycert }}"
-    #     user: "{{ user }}"
-    #     password: "{{ password }}"
-    #     serial_no: "{{ serial_no }}"
-    #     sg_name: "{{ sg_name }}"
-    #     state: "present"
-    #   register: new_sg
-
-    # - name: Print out new created storage group
-    #   ansible.builtin.debug:
-    #     msg: "{{ new_sg }}"  
 
   roles:
     - create_storagegroup
