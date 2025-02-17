@@ -1,7 +1,7 @@
 ---
 - name: Create Storage Group
-  # hosts: create_storagegroup
-  hosts: all
+  hosts: create_storagegroup
+  # hosts: all
   connection: local
   gather_facts: false
   # become: true
@@ -18,7 +18,6 @@
       ansible.builtin.debug:
         msg: "{{ result }}"
 
-  tasks:
     - name: Run python3 -m site
       ansible.builtin.command: python3 -m site
       register: site_output
@@ -27,23 +26,24 @@
       debug:
         msg: "{{ site_output.stdout_lines }}"
 
-    - name: Create Storage Group
-      collections:
-        - dellemc.powermax
-      dellemc.powermax.storagegroup:
-        unispherehost: "{{ unispherehost }}"
-        universion: "{{ universion }}"
-        verifycert: "{{ verifycert }}"
-        user: "{{ user }}"
-        password: "{{ password }}"
-        serial_no: "{{ serial_no }}"
-        sg_name: "{{ sg_name }}"
-        state: "present"
-      register: new_sg
+  # tasks:
+    # - name: Create Storage Group
+    #   collections:
+    #     - dellemc.powermax
+    #   dellemc.powermax.storagegroup:
+    #     unispherehost: "{{ unispherehost }}"
+    #     universion: "{{ universion }}"
+    #     verifycert: "{{ verifycert }}"
+    #     user: "{{ user }}"
+    #     password: "{{ password }}"
+    #     serial_no: "{{ serial_no }}"
+    #     sg_name: "{{ sg_name }}"
+    #     state: "present"
+    #   register: new_sg
 
-    - name: Print out new created storage group
-      ansible.builtin.debug:
-        msg: "{{ new_sg }}"  
+    # - name: Print out new created storage group
+    #   ansible.builtin.debug:
+    #     msg: "{{ new_sg }}"  
 
-  # roles:
-  #   - create_storagegroup
+  roles:
+    - create_storagegroup
