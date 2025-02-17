@@ -18,6 +18,14 @@
         msg: "{{ result }}"
 
   tasks:
+    - name: Run python3 -m site
+      ansible.builtin.command: python3 -m site
+      register: site_output
+
+    - name: Display site paths
+      debug:
+        msg: "{{ site_output.stdout_lines }}"
+        
     - name: Create Storage Group
       collections:
         - dellemc.powermax
