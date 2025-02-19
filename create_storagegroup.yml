@@ -1,0 +1,9 @@
+---
+- name: Create Storage Group
+  hosts: create_storagegroup
+  connection: local
+  gather_facts: false
+
+  roles:
+    - create_storagegroup
+

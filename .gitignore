@@ -1,0 +1,7 @@
+.git/
+*.log
+.vscode/
+.ansible/
+artifacts/
+collections/
+requirements.yml
