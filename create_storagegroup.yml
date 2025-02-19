@@ -10,18 +10,18 @@
       ansible.builtin.command: 'pip3 show PyU4V'
       ignore_errors: true
       changed_when: result.rc != 0 # <- Uses the return code to define when the task has changed.
-      register: result
+      register: result1
 
     - name: Print out package installation status
       ansible.builtin.debug:
-        msg: "{{ result }}"
+        msg: "{{ result1 }}"
 
     - name: Run python3 -m site
       ansible.builtin.command: python3 -m site
       register: site_output
 
     - name: Display site paths
-      debug:
+      ansible.builtin.debug:
         msg: "{{ site_output.stdout_lines }}"
 
   roles:
